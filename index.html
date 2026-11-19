@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Tenses Homework</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    colors: {
+                        cream: '#FAF8F5'
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-cream text-slate-800 font-sans antialiased min-h-screen py-6 px-4 sm:py-10 sm:px-6">
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto space-y-6 sm:space-y-8">
+
+        <!-- Header Card -->
+        <header class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-500 via-teal-500 to-emerald-400"></div>
+
+            <div class="pt-1">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 mb-3">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    English Practice
+                </span>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    Future Tenses Homework
+                </h1>
+                <p class="text-slate-500 mt-1.5 text-sm sm:text-base">
+                    Complete all 5 tasks below. Use the Grammar Help button if you need a quick reminder.
+                </p>
+            </div>
+
+            <!-- Student Name Input -->
+            <div class="mt-6 pt-6 border-t border-stone-100">
+                <label for="student-name" class="block text-sm font-semibold text-slate-700 mb-2">
+                    Your Name: <span class="text-rose-500">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="student-name"
+                    name="student-name"
+                    placeholder="Enter your first and last name..."
+                    autocomplete="name"
+                    class="w-full sm:max-w-md px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/50 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:bg-white transition"
+                >
+                <p id="name-error" class="hidden mt-2 text-sm font-medium text-rose-600 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Please enter your name before sending your homework.
+                </p>
+            </div>
+        </header>
+
+        <!-- Collapsible Grammar Help Panel -->
+        <section class="bg-white rounded-3xl shadow-sm border border-indigo-200/80 overflow-hidden">
+            <button
+                type="button"
+                id="grammar-help-toggle"
+                aria-expanded="false"
+                aria-controls="grammar-help-panel"
+                class="w-full px-6 py-4 sm:px-8 sm:py-5 flex items-center justify-between gap-4 text-left bg-indigo-50/60 hover:bg-indigo-50 transition"
+            >
+                <div class="flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <span class="block text-base sm:text-lg font-bold text-indigo-950">Grammar Help</span>
+                        <span class="block text-xs sm:text-sm text-indigo-700/80">Click to open or close the Future Tenses cheat sheet</span>
+                    </div>
+                </div>
+                <svg id="grammar-help-chevron" class="w-5 h-5 text-indigo-600 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+
+            <div id="grammar-help-panel" class="hidden border-t border-indigo-100 p-6 sm:p-8 bg-white">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-sky-50/70 border border-sky-200/70">
+                        <h3 class="font-bold text-sky-900 text-sm sm:text-base">1. Present Simple</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Use for <strong>timetables &amp; schedules</strong> (trains, buses, flights, lessons, movies).
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-sky-800 mt-2 bg-white/80 rounded-xl px-3 py-2">
+                            "The train leaves at 8:00."
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-teal-50/70 border border-teal-200/70">
+                        <h3 class="font-bold text-teal-900 text-sm sm:text-base">2. Present Continuous</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Use for <strong>fixed arrangements</strong> with a specific time or place (already organized).
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-teal-800 mt-2 bg-white/80 rounded-xl px-3 py-2">
+                            "I am meeting Anna tonight."
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/70">
+                        <h3 class="font-bold text-amber-900 text-sm sm:text-base">3. be going to</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Use for <strong>personal plans &amp; intentions</strong> (and predictions with clear evidence).
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-amber-800 mt-2 bg-white/80 rounded-xl px-3 py-2">
+                            "I am going to buy a new phone."
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-violet-50/70 border border-violet-200/70">
+                        <h3 class="font-bold text-violet-900 text-sm sm:text-base">4. will</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Use for <strong>instant decisions, promises, offers, and predictions</strong> (often with <em>I think</em>).
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-violet-800 mt-2 bg-white/80 rounded-xl px-3 py-2">
+                            "I think it will rain."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Homework Form -->
+        <form id="homework-form" class="space-y-6 sm:space-y-8" novalidate>
+
+            <!-- EXERCISE 1: Multiple Choice -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8">
+                <div class="flex items-start justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Exercise 1 of 5</span>
+                        <h2 class="text-xl font-bold text-slate-900 mt-0.5">Choose the best option</h2>
+                        <p class="text-sm text-slate-500 mt-1">Read each sentence and click on the correct answer.</p>
+                    </div>
+                    <span id="ex1-score-badge" class="hidden shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700"></span>
+                </div>
+
+                <div id="ex1-container" class="space-y-5"></div>
+            </section>
+
+            <!-- EXERCISE 2: Match the Halves -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8">
+                <div class="flex items-start justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Exercise 2 of 5</span>
+                        <h2 class="text-xl font-bold text-slate-900 mt-0.5">Match the sentence halves</h2>
+                        <p class="text-sm text-slate-500 mt-1">Choose the best ending for each sentence from the list.</p>
+                    </div>
+                    <span id="ex2-score-badge" class="hidden shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700"></span>
+                </div>
+
+                <div id="ex2-container" class="space-y-4"></div>
+            </section>
+
+            <!-- EXERCISE 3: Fill in the Gaps -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8">
+                <div class="flex items-start justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Exercise 3 of 5</span>
+                        <h2 class="text-xl font-bold text-slate-900 mt-0.5">Fill in the gaps</h2>
+                        <p class="text-sm text-slate-500 mt-1">Type the correct future form of the verb in brackets. You can use short or full forms.</p>
+                    </div>
+                    <span id="ex3-score-badge" class="hidden shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700"></span>
+                </div>
+
+                <div id="ex3-container" class="space-y-4"></div>
+            </section>
+
+            <!-- EXERCISE 4: Sentence Builder -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8">
+                <div class="flex items-start justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Exercise 4 of 5</span>
+                        <h2 class="text-xl font-bold text-slate-900 mt-0.5">Put the words in the right order</h2>
+                        <p class="text-sm text-slate-500 mt-1">Click a word tile to add it to the sentence. Click a placed word to move it back.</p>
+                    </div>
+                    <span id="ex4-score-badge" class="hidden shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700"></span>
+                </div>
+
+                <div id="ex4-container" class="space-y-6"></div>
+            </section>
+
+            <!-- EXERCISE 5: Creative Writing -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8">
+                <div class="mb-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Exercise 5 of 5</span>
+                    <h2 class="text-xl font-bold text-slate-900 mt-0.5">Write about your weekend plans</h2>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Write 5–6 sentences about your plans for the next weekend. Use at least 3 different future forms
+                        (<span class="font-semibold text-indigo-700">will</span>,
+                        <span class="font-semibold text-indigo-700">be going to</span>,
+                        <span class="font-semibold text-indigo-700">Present Continuous</span>,
+                        <span class="font-semibold text-indigo-700">Present Simple</span>).
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <textarea
+                        id="ex5-essay"
+                        rows="6"
+                        placeholder="Write your sentences here..."
+                        class="w-full p-4 rounded-2xl border border-stone-300 bg-stone-50/50 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:bg-white transition resize-y leading-relaxed"
+                    ></textarea>
+                    <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+                        <span>Your teacher will read and check this task personally.</span>
+                        <span class="font-semibold text-slate-700">Words: <span id="word-count">0</span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submission Section -->
+            <section class="bg-white rounded-3xl shadow-sm border border-stone-200/80 p-6 sm:p-8 space-y-5">
+                <!-- Required Ukrainian Reminder -->
+                <div class="rounded-2xl bg-amber-50 border border-amber-200 p-4 flex items-start gap-3">
+                    <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p class="text-sm sm:text-base font-semibold text-amber-900">
+                        Перевір точність своїх відповідей ще раз перед надсиланням вчителю
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    id="submit-btn"
+                    class="w-full py-4 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-bold text-base sm:text-lg shadow-md shadow-indigo-200 transition flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <span id="submit-btn-text">Надіслати вчителю</span>
+                </button>
+
+                <!-- Result & Status Banner -->
+                <div id="result-banner" class="hidden rounded-2xl p-5 border transition-all">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h3 id="result-title" class="text-lg font-bold"></h3>
+                            <p id="result-message" class="text-sm mt-1"></p>
+                        </div>
+                        <div class="shrink-0 bg-white/80 rounded-2xl px-5 py-3 text-center border border-black/5 shadow-sm">
+                            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Score</div>
+                            <div id="result-score" class="text-2xl font-extrabold text-indigo-700 mt-0.5">0 / 19</div>
+                        </div>
+                    </div>
+                    <p id="dev-note" class="hidden mt-4 pt-3 border-t border-black/10 text-xs text-slate-700"></p>
+                </div>
+            </section>
+
+        </form>
+
+        <footer class="text-center text-xs text-slate-400 pb-6">
+            Great job practicing your English!
+        </footer>
+    </div>
+
+    <script>
+        // ==========================================
+        // TELEGRAM BOT CONFIGURATION
+        // ==========================================
+        const BOT_TOKEN = "9000524592:AAFGz0I36Xc4XS2Y4qyNMfQzaxaWZMkLxGU";
+        const CHAT_ID = "749833850";
+
+        // ==========================================
+        // EXERCISE DATA
+        // ==========================================
+
+        // Exercise 1: Multiple Choice (5 items)
+        const ex1Data = [
+            {
+                id: 1,
+                question: "The train ___ at 8:00 AM tomorrow.",
+                options: [
+                    { key: "A", text: "leaves" },
+                    { key: "B", text: "is leaving" },
+                    { key: "C", text: "will leave" }
+                ],
+                correct: "A"
+            },
+            {
+                id: 2,
+                question: "I ___ my dentist at 3:30 PM today. I have an appointment.",
+                options: [
+                    { key: "A", text: "see" },
+                    { key: "B", text: "am seeing" },
+                    { key: "C", text: "will see" }
+                ],
+                correct: "B"
+            },
+            {
+                id: 3,
+                question: "Look at those black clouds! It ___ rain soon.",
+                options: [
+                    { key: "A", text: "rains" },
+                    { key: "B", text: "is going to" },
+                    { key: "C", text: "will" }
+                ],
+                correct: "B"
+            },
+            {
+                id: 4,
+                question: "\"It is very cold in here!\" — \"I ___ the window.\"",
+                options: [
+                    { key: "A", text: "close" },
+                    { key: "B", text: "am closing" },
+                    { key: "C", text: "will close" }
+                ],
+                correct: "C"
+            },
+            {
+                id: 5,
+                question: "Next month, I ___ buy a new bicycle. I saved enough money.",
+                options: [
+                    { key: "A", text: "am going to" },
+                    { key: "B", text: "buy" },
+                    { key: "C", text: "will" }
+                ],
+                correct: "A"
+            }
+        ];
+
+        // Exercise 2: Match the Halves (5 items)
+        const ex2Endings = [
+            "at 7:30 PM tonight.",
+            "I will carry it for you.",
+            "to Spain next summer.",
+            "at the cafe at 6:00 PM.",
+            "it will be sunny tomorrow."
+        ];
+
+        const ex2Data = [
+            {
+                id: 1,
+                beginning: "The movie starts...",
+                correct: "at 7:30 PM tonight."
+            },
+            {
+                id: 2,
+                beginning: "Your bag looks heavy...",
+                correct: "I will carry it for you."
+            },
+            {
+                id: 3,
+                beginning: "We are going to travel...",
+                correct: "to Spain next summer."
+            },
+            {
+                id: 4,
+                beginning: "I am meeting Anna...",
+                correct: "at the cafe at 6:00 PM."
+            },
+            {
+                id: 5,
+                beginning: "I think...",
+                correct: "it will be sunny tomorrow."
+            }
+        ];
+
+        // Exercise 3: Fill in the Gaps (5 items)
+        const ex3Data = [
+            {
+                id: 1,
+                before: "Hurry up! The bus",
+                verb: "leave",
+                after: "in five minutes.",
+                answers: ["leaves"]
+            },
+            {
+                id: 2,
+                before: "Don't worry, I",
+                verb: "help",
+                after: "you with your homework.",
+                answers: ["will help", "'ll help"]
+            },
+            {
+                id: 3,
+                before: "We",
+                verb: "have",
+                after: "dinner with our friends at 7 PM tonight.",
+                answers: ["are having", "'re having"]
+            },
+            {
+                id: 4,
+                before: "He",
+                verb: "not / buy",
+                after: "a new car this year. It is too expensive.",
+                answers: ["is not going to buy", "isn't going to buy", "'s not going to buy"]
+            },
+            {
+                id: 5,
+                before: "Our English lesson",
+                verb: "start",
+                after: "at 9:00 AM every Monday.",
+                answers: ["starts"]
+            }
+        ];
+
+        // Exercise 4: Sentence Builder (4 items)
+        const ex4Data = [
+            {
+                id: 1,
+                chips: ["going", "I", "am", "to", "cook", "pasta", "tonight."],
+                correct: "I am going to cook pasta tonight."
+            },
+            {
+                id: 2,
+                chips: ["arrives", "The", "train", "at", "ten", "o'clock."],
+                correct: "The train arrives at ten o'clock."
+            },
+            {
+                id: 3,
+                chips: ["meeting", "are", "We", "friends", "our", "tomorrow."],
+                correct: "We are meeting our friends tomorrow."
+            },
+            {
+                id: 4,
+                chips: ["will", "It", "rain", "think", "I", "later."],
+                correct: "I think it will rain later."
+            }
+        ];
+
+        // State stores
+        const ex1State = {};
+        const ex4State = {};
+
+        // ==========================================
+        // RENDER FUNCTIONS
+        // ==========================================
+
+        function renderExercise1() {
+            const container = document.getElementById("ex1-container");
+            container.innerHTML = "";
+
+            ex1Data.forEach((item) => {
+                const wrapper = document.createElement("div");
+                wrapper.id = "ex1-q-" + item.id;
+                wrapper.className = "p-4 rounded-2xl border border-stone-200 bg-stone-50/40 transition-colors";
+
+                const qText = document.createElement("p");
+                qText.className = "font-semibold text-slate-800 mb-3 text-sm sm:text-base";
+                qText.textContent = item.id + ". " + item.question;
+                wrapper.appendChild(qText);
+
+                const grid = document.createElement("div");
+                grid.className = "grid grid-cols-1 sm:grid-cols-3 gap-2.5";
+
+                item.options.forEach((opt) => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.dataset.qId = String(item.id);
+                    btn.dataset.optKey = opt.key;
+                    btn.className = "ex1-opt text-left px-4 py-3 rounded-xl border border-stone-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-sm font-medium text-slate-700 transition flex items-center gap-2.5";
+
+                    const badge = document.createElement("span");
+                    badge.className = "opt-letter w-6 h-6 rounded-lg bg-stone-100 text-stone-600 font-bold text-xs flex items-center justify-center shrink-0 transition";
+                    badge.textContent = opt.key;
+
+                    const label = document.createElement("span");
+                    label.textContent = opt.text;
+
+                    btn.appendChild(badge);
+                    btn.appendChild(label);
+                    btn.addEventListener("click", () => selectEx1Option(item.id, opt.key));
+                    grid.appendChild(btn);
+                });
+
+                wrapper.appendChild(grid);
+
+                const feedback = document.createElement("p");
+                feedback.id = "ex1-fb-" + item.id;
+                feedback.className = "hidden mt-2.5 text-xs font-semibold";
+                wrapper.appendChild(feedback);
+
+                container.appendChild(wrapper);
+            });
+        }
+
+        function selectEx1Option(qId, optKey) {
+            ex1State[qId] = optKey;
+            const wrapper = document.getElementById("ex1-q-" + qId);
+            const buttons = wrapper.querySelectorAll(".ex1-opt");
+
+            buttons.forEach((btn) => {
+                const isSelected = btn.dataset.optKey === optKey;
+                const badge = btn.querySelector(".opt-letter");
+                if (isSelected) {
+                    btn.className = "ex1-opt text-left px-4 py-3 rounded-xl border-2 border-indigo-500 bg-indigo-50 text-sm font-semibold text-indigo-900 transition flex items-center gap-2.5 shadow-sm";
+                    badge.className = "opt-letter w-6 h-6 rounded-lg bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0 transition";
+                } else {
+                    btn.className = "ex1-opt text-left px-4 py-3 rounded-xl border border-stone-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-sm font-medium text-slate-700 transition flex items-center gap-2.5";
+                    badge.className = "opt-letter w-6 h-6 rounded-lg bg-stone-100 text-stone-600 font-bold text-xs flex items-center justify-center shrink-0 transition";
+                }
+            });
+        }
+
+        function renderExercise2() {
+            const container = document.getElementById("ex2-container");
+            container.innerHTML = "";
+
+            ex2Data.forEach((item) => {
+                const row = document.createElement("div");
+                row.id = "ex2-q-" + item.id;
+                row.className = "p-4 rounded-2xl border border-stone-200 bg-stone-50/40 flex flex-col md:flex-row md:items-center justify-between gap-3 transition-colors";
+
+                const sentenceEl = document.createElement("div");
+                sentenceEl.className = "font-semibold text-slate-800 text-sm sm:text-base md:w-1/2";
+                sentenceEl.textContent = item.id + ". " + item.beginning;
+
+                const selectWrap = document.createElement("div");
+                selectWrap.className = "md:w-1/2 space-y-1.5";
+
+                const select = document.createElement("select");
+                select.id = "ex2-select-" + item.id;
+                select.className = "w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition";
+
+                const defaultOpt = document.createElement("option");
+                defaultOpt.value = "";
+                defaultOpt.textContent = "— Choose the ending —";
+                select.appendChild(defaultOpt);
+
+                ex2Endings.forEach((ending) => {
+                    const opt = document.createElement("option");
+                    opt.value = ending;
+                    opt.textContent = ending;
+                    select.appendChild(opt);
+                });
+
+                const feedback = document.createElement("p");
+                feedback.id = "ex2-fb-" + item.id;
+                feedback.className = "hidden text-xs font-semibold";
+
+                selectWrap.appendChild(select);
+                selectWrap.appendChild(feedback);
+
+                row.appendChild(sentenceEl);
+                row.appendChild(selectWrap);
+                container.appendChild(row);
+            });
+        }
+
+        function renderExercise3() {
+            const container = document.getElementById("ex3-container");
+            container.innerHTML = "";
+
+            ex3Data.forEach((item) => {
+                const row = document.createElement("div");
+                row.id = "ex3-q-" + item.id;
+                row.className = "p-4 rounded-2xl border border-stone-200 bg-stone-50/40 transition-colors";
+
+                const line = document.createElement("div");
+                line.className = "text-sm sm:text-base text-slate-800 leading-loose flex flex-wrap items-center gap-x-2 gap-y-2";
+
+                const numSpan = document.createElement("span");
+                numSpan.className = "font-bold text-slate-500";
+                numSpan.textContent = item.id + ".";
+
+                const beforeSpan = document.createElement("span");
+                beforeSpan.textContent = item.before;
+
+                const input = document.createElement("input");
+                input.type = "text";
+                input.id = "ex3-input-" + item.id;
+                input.autocomplete = "off";
+                input.spellcheck = false;
+                input.placeholder = "(" + item.verb + ")";
+                input.className = "w-44 sm:w-48 px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-slate-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition";
+
+                const verbBadge = document.createElement("span");
+                verbBadge.className = "text-xs font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-md";
+                verbBadge.textContent = "(" + item.verb + ")";
+
+                const afterSpan = document.createElement("span");
+                afterSpan.textContent = item.after;
+
+                line.appendChild(numSpan);
+                line.appendChild(beforeSpan);
+                line.appendChild(input);
+                line.appendChild(verbBadge);
+                line.appendChild(afterSpan);
+
+                const feedback = document.createElement("p");
+                feedback.id = "ex3-fb-" + item.id;
+                feedback.className = "hidden mt-2 text-xs font-semibold";
+
+                row.appendChild(line);
+                row.appendChild(feedback);
+                container.appendChild(row);
+            });
+        }
+
+        function renderExercise4() {
+            const container = document.getElementById("ex4-container");
+            container.innerHTML = "";
+
+            ex4Data.forEach((item) => {
+                ex4State[item.id] = {
+                    bank: item.chips.map((word, idx) => ({ id: item.id + "-" + idx, word: word })),
+                    answer: []
+                };
+
+                const card = document.createElement("div");
+                card.id = "ex4-q-" + item.id;
+                card.className = "p-4 rounded-2xl border border-stone-200 bg-stone-50/40 space-y-3 transition-colors";
+
+                const header = document.createElement("div");
+                header.className = "flex items-center justify-between";
+
+                const titleSpan = document.createElement("span");
+                titleSpan.className = "text-sm font-bold text-slate-700";
+                titleSpan.textContent = "Sentence " + item.id;
+
+                const resetBtn = document.createElement("button");
+                resetBtn.type = "button";
+                resetBtn.id = "ex4-reset-" + item.id;
+                resetBtn.className = "text-xs font-semibold text-slate-500 hover:text-indigo-600 px-2.5 py-1 rounded-lg hover:bg-indigo-50 transition";
+                resetBtn.textContent = "Reset";
+                resetBtn.addEventListener("click", () => {
+                    ex4State[item.id] = {
+                        bank: item.chips.map((word, idx) => ({ id: item.id + "-" + idx, word: word })),
+                        answer: []
+                    };
+                    updateEx4UI(item.id);
+                });
+
+                header.appendChild(titleSpan);
+                header.appendChild(resetBtn);
+
+                const answerZone = document.createElement("div");
+                answerZone.id = "ex4-answer-" + item.id;
+                answerZone.className = "min-h-[54px] p-2.5 rounded-xl border-2 border-dashed border-stone-300 bg-white flex flex-wrap items-center gap-2 transition-colors";
+
+                const bankZone = document.createElement("div");
+                bankZone.id = "ex4-bank-" + item.id;
+                bankZone.className = "flex flex-wrap items-center gap-2 pt-1";
+
+                const feedback = document.createElement("p");
+                feedback.id = "ex4-fb-" + item.id;
+                feedback.className = "hidden text-xs font-semibold";
+
+                card.appendChild(header);
+                card.appendChild(answerZone);
+                card.appendChild(bankZone);
+                card.appendChild(feedback);
+                container.appendChild(card);
+
+                updateEx4UI(item.id);
+            });
+        }
+
+        function updateEx4UI(qId) {
+            const state = ex4State[qId];
+            const answerZone = document.getElementById("ex4-answer-" + qId);
+            const bankZone = document.getElementById("ex4-bank-" + qId);
+
+            answerZone.innerHTML = "";
+            bankZone.innerHTML = "";
+
+            if (state.answer.length === 0) {
+                const placeholder = document.createElement("span");
+                placeholder.className = "text-xs sm:text-sm text-slate-400 px-1 select-none";
+                placeholder.textContent = "Click words below to build the sentence...";
+                answerZone.appendChild(placeholder);
+            } else {
+                state.answer.forEach((chip) => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold shadow-sm transition active:scale-95";
+                    btn.textContent = chip.word;
+                    btn.addEventListener("click", () => {
+                        state.answer = state.answer.filter((c) => c.id !== chip.id);
+                        state.bank.push(chip);
+                        updateEx4UI(qId);
+                    });
+                    answerZone.appendChild(btn);
+                });
+            }
+
+            state.bank.forEach((chip) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "px-3.5 py-2 rounded-xl bg-white hover:bg-teal-50 border border-stone-300 hover:border-teal-400 text-slate-700 text-sm font-semibold shadow-sm transition active:scale-95";
+                btn.textContent = chip.word;
+                btn.addEventListener("click", () => {
+                    state.bank = state.bank.filter((c) => c.id !== chip.id);
+                    state.answer.push(chip);
+                    updateEx4UI(qId);
+                });
+                bankZone.appendChild(btn);
+            });
+        }
+
+        // ==========================================
+        // HELPER FUNCTIONS
+        // ==========================================
+
+        function normalizeAnswer(str) {
+            return str
+                .trim()
+                .toLowerCase()
+                .replace(/[\u2018\u2019`]/g, "'")
+                .replace(/\s+/g, " ");
+        }
+
+        function setCardStatus(el, isCorrect) {
+            el.classList.remove(
+                "border-stone-200",
+                "bg-stone-50/40",
+                "border-emerald-400",
+                "bg-emerald-50/60",
+                "border-rose-400",
+                "bg-rose-50/60"
+            );
+            if (isCorrect) {
+                el.classList.add("border-emerald-400", "bg-emerald-50/60");
+            } else {
+                el.classList.add("border-rose-400", "bg-rose-50/60");
+            }
+        }
+
+        function showFeedback(id, isCorrect, text) {
+            const el = document.getElementById(id);
+            el.classList.remove("hidden", "text-emerald-700", "text-rose-600");
+            el.classList.add(isCorrect ? "text-emerald-700" : "text-rose-600");
+            el.textContent = text;
+        }
+
+        function showScoreBadge(id, score, total) {
+            const el = document.getElementById(id);
+            el.classList.remove("hidden");
+            el.textContent = score + " / " + total;
+        }
+
+        // ==========================================
+        // GRADING & TELEGRAM SUBMISSION
+        // ==========================================
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById("student-name");
+            const nameError = document.getElementById("name-error");
+            const studentName = nameInput.value.trim();
+
+            // 1. Validate student name
+            if (!studentName) {
+                nameError.classList.remove("hidden");
+                nameInput.classList.add("border-rose-500", "ring-2", "ring-rose-200");
+                nameInput.focus();
+                nameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+                return;
+            }
+
+            nameError.classList.add("hidden");
+            nameInput.classList.remove("border-rose-500", "ring-2", "ring-rose-200");
+
+            // 2. Grade Exercise 1
+            let ex1Score = 0;
+            const ex1Mistakes = [];
+            ex1Data.forEach((item) => {
+                const chosenKey = ex1State[item.id] || null;
+                const chosenObj = item.options.find((o) => o.key === chosenKey);
+                const correctObj = item.options.find((o) => o.key === item.correct);
+                const isCorrect = chosenKey === item.correct;
+                const card = document.getElementById("ex1-q-" + item.id);
+
+                setCardStatus(card, isCorrect);
+                if (isCorrect) {
+                    ex1Score++;
+                    showFeedback("ex1-fb-" + item.id, true, "Correct!");
+                } else {
+                    const userText = chosenObj ? chosenObj.key + ") " + chosenObj.text : "(no answer)";
+                    showFeedback("ex1-fb-" + item.id, false, "Correct answer: " + correctObj.key + ") " + correctObj.text);
+                    ex1Mistakes.push("  - Q" + item.id + ": Student wrote \"" + userText + "\" | Correct: \"" + correctObj.key + ") " + correctObj.text + "\"");
+                }
+            });
+            showScoreBadge("ex1-score-badge", ex1Score, ex1Data.length);
+
+            // 3. Grade Exercise 2
+            let ex2Score = 0;
+            const ex2Mistakes = [];
+            ex2Data.forEach((item) => {
+                const select = document.getElementById("ex2-select-" + item.id);
+                const userVal = select.value;
+                const isCorrect = userVal === item.correct;
+                const card = document.getElementById("ex2-q-" + item.id);
+
+                setCardStatus(card, isCorrect);
+                if (isCorrect) {
+                    ex2Score++;
+                    showFeedback("ex2-fb-" + item.id, true, "Correct!");
+                } else {
+                    const userText = userVal || "(no answer)";
+                    showFeedback("ex2-fb-" + item.id, false, "Correct ending: " + item.correct);
+                    ex2Mistakes.push("  - Q" + item.id + ": Student chose \"" + userText + "\" | Correct: \"" + item.correct + "\"");
+                }
+            });
+            showScoreBadge("ex2-score-badge", ex2Score, ex2Data.length);
+
+            // 4. Grade Exercise 3
+            let ex3Score = 0;
+            const ex3Mistakes = [];
+            ex3Data.forEach((item) => {
+                const input = document.getElementById("ex3-input-" + item.id);
+                const rawVal = input.value.trim();
+                const normVal = normalizeAnswer(rawVal);
+                const isCorrect = item.answers.some((ans) => normalizeAnswer(ans) === normVal);
+                const card = document.getElementById("ex3-q-" + item.id);
+
+                setCardStatus(card, isCorrect);
+                if (isCorrect) {
+                    ex3Score++;
+                    showFeedback("ex3-fb-" + item.id, true, "Correct!");
+                } else {
+                    const userText = rawVal || "(empty)";
+                    const expectedText = item.answers.join(" / ");
+                    showFeedback("ex3-fb-" + item.id, false, "Correct answer: " + expectedText);
+                    ex3Mistakes.push("  - Q" + item.id + ": Student wrote \"" + userText + "\" | Correct: \"" + expectedText + "\"");
+                }
+            });
+            showScoreBadge("ex3-score-badge", ex3Score, ex3Data.length);
+
+            // 5. Grade Exercise 4
+            let ex4Score = 0;
+            const ex4Mistakes = [];
+            ex4Data.forEach((item) => {
+                const builtSentence = ex4State[item.id].answer.map((c) => c.word).join(" ").trim();
+                const isCorrect = normalizeAnswer(builtSentence) === normalizeAnswer(item.correct);
+                const card = document.getElementById("ex4-q-" + item.id);
+
+                setCardStatus(card, isCorrect);
+                if (isCorrect) {
+                    ex4Score++;
+                    showFeedback("ex4-fb-" + item.id, true, "Correct!");
+                } else {
+                    const userText = builtSentence || "(empty)";
+                    showFeedback("ex4-fb-" + item.id, false, "Correct sentence: " + item.correct);
+                    ex4Mistakes.push("  - Q" + item.id + ": Student built \"" + userText + "\" | Correct: \"" + item.correct + "\"");
+                }
+            });
+            showScoreBadge("ex4-score-badge", ex4Score, ex4Data.length);
+
+            const totalScore = ex1Score + ex2Score + ex3Score + ex4Score;
+            const maxScore = ex1Data.length + ex2Data.length + ex3Data.length + ex4Data.length;
+            const essayText = document.getElementById("ex5-essay").value.trim() || "(No text written)";
+
+            // 6. Build Telegram Report
+            const reportLines = [
+                "HOMEWORK REPORT: Future Tenses",
+                "Student: " + studentName,
+                "Total Score: " + totalScore + " / " + maxScore,
+                "",
+                "1) Multiple Choice: " + ex1Score + "/" + ex1Data.length,
+                ...(ex1Mistakes.length ? ex1Mistakes : ["  No mistakes!"]),
+                "",
+                "2) Match the Halves: " + ex2Score + "/" + ex2Data.length,
+                ...(ex2Mistakes.length ? ex2Mistakes : ["  No mistakes!"]),
+                "",
+                "3) Fill in the Gaps: " + ex3Score + "/" + ex3Data.length,
+                ...(ex3Mistakes.length ? ex3Mistakes : ["  No mistakes!"]),
+                "",
+                "4) Word Order: " + ex4Score + "/" + ex4Data.length,
+                ...(ex4Mistakes.length ? ex4Mistakes : ["  No mistakes!"]),
+                "",
+                "5) Creative Writing (Weekend Plans):",
+                essayText
+            ];
+            const reportText = reportLines.join("\n");
+
+            const submitBtn = document.getElementById("submit-btn");
+            const submitBtnText = document.getElementById("submit-btn-text");
+            const resultBanner = document.getElementById("result-banner");
+            const resultTitle = document.getElementById("result-title");
+            const resultMessage = document.getElementById("result-message");
+            const resultScore = document.getElementById("result-score");
+            const devNote = document.getElementById("dev-note");
+
+            resultScore.textContent = totalScore + " / " + maxScore;
+            devNote.classList.add("hidden");
+
+            const isConfigured =
+                BOT_TOKEN &&
+                CHAT_ID &&
+                BOT_TOKEN !== "YOUR_BOT_TOKEN" &&
+                CHAT_ID !== "YOUR_CHAT_ID";
+
+            if (!isConfigured) {
+                console.info("Telegram keys not configured. Report preview:\n\n" + reportText);
+                resultBanner.className = "rounded-2xl p-5 border bg-emerald-50 border-emerald-200 text-emerald-900 transition-all";
+                resultTitle.textContent = "Your answers have been checked locally!";
+                resultMessage.textContent = "Scroll up to see the green and red highlights for each task.";
+                devNote.textContent = "Teacher note: To receive results automatically in Telegram, replace YOUR_BOT_TOKEN and YOUR_CHAT_ID at the top of the <script> section.";
+                devNote.classList.remove("hidden");
+                resultBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtnText.textContent = "Sending...";
+
+            try {
+                const response = await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: reportText
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok || !data.ok) {
+                    throw new Error(data.description || "Telegram API error");
+                }
+
+                resultBanner.className = "rounded-2xl p-5 border bg-emerald-50 border-emerald-200 text-emerald-900 transition-all";
+                resultTitle.textContent = "Your homework has been sent to your teacher!";
+                resultMessage.textContent = "Great job! You can scroll up to review your answers.";
+            } catch (error) {
+                console.error("Failed to send homework to Telegram:", error);
+                resultBanner.className = "rounded-2xl p-5 border bg-rose-50 border-rose-200 text-rose-900 transition-all";
+                resultTitle.textContent = "Could not send to Telegram";
+                resultMessage.textContent = "Your answers were checked above, but there was a connection error. Please check your internet and try again.";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = "Надіслати вчителю";
+                resultBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            // Render all interactive exercises
+            renderExercise1();
+            renderExercise2();
+            renderExercise3();
+            renderExercise4();
+
+            // Grammar Help accordion toggle
+            const helpToggle = document.getElementById("grammar-help-toggle");
+            const helpPanel = document.getElementById("grammar-help-panel");
+            const helpChevron = document.getElementById("grammar-help-chevron");
+
+            helpToggle.addEventListener("click", () => {
+                const isHidden = helpPanel.classList.toggle("hidden");
+                helpToggle.setAttribute("aria-expanded", String(!isHidden));
+                helpChevron.classList.toggle("rotate-180", !isHidden);
+            });
+
+            // Auto-fill student name from URL (?name=...)
+            const params = new URLSearchParams(window.location.search);
+            const nameFromUrl = params.get("name");
+            if (nameFromUrl) {
+                document.getElementById("student-name").value = nameFromUrl;
+            }
+
+            // Clear name error while typing
+            const nameInput = document.getElementById("student-name");
+            nameInput.addEventListener("input", () => {
+                if (nameInput.value.trim()) {
+                    document.getElementById("name-error").classList.add("hidden");
+                    nameInput.classList.remove("border-rose-500", "ring-2", "ring-rose-200");
+                }
+            });
+
+            // Live word counter for Exercise 5
+            const essayInput = document.getElementById("ex5-essay");
+            const wordCountEl = document.getElementById("word-count");
+            essayInput.addEventListener("input", () => {
+                const text = essayInput.value.trim();
+                const words = text ? text.split(/\s+/).length : 0;
+                wordCountEl.textContent = String(words);
+            });
+
+            // Form submit handler
+            document.getElementById("homework-form").addEventListener("submit", handleSubmit);
+        });
+    </script>
+</body>
+</html>
